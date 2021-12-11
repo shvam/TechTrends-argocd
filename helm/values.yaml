@@ -1,0 +1,31 @@
+namespace:
+  name: development
+
+service:
+  port: 4111
+  targetport: 3111
+  protocol: TCP
+  type: clusterIP
+ 
+image:
+  repository: sh27dkr/techtrends 
+  tag: latest
+  pullpolicy: IfNotPresent
+
+replicaCount: 1
+
+resources:
+  requests:
+    memory: 64Mi
+    cpu: 250m
+  limits:
+    memory: 129Mi
+    cpu: 500m
+
+containerPort: 3111
+
+livenessProbe:
+  path: /healthz
+
+readinessProbe:
+ path: /healthz 
