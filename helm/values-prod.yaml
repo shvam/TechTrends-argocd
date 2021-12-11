@@ -5,7 +5,7 @@ service:
   port: 7111
   targetport: 3111
   protocol: TCP
-  type: clusterIP
+  type: ClusterIP
  
 image:
   repository: sh27dkr/techtrends 
